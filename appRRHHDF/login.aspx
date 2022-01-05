@@ -18,7 +18,7 @@
 	<link href="assets/plugins/animate/animate.min.css" rel="stylesheet" />
 	<link href="assets/css/default/style.min.css" rel="stylesheet" />
 	<link href="assets/css/default/style-responsive.min.css" rel="stylesheet" />
-	<link href="assets/css/default/theme/default.css" rel="stylesheet" id="theme" />
+	<link href="assets/css/default/theme/blue.css" rel="stylesheet" id="theme" />
 	<!-- ================== END BASE CSS STYLE ================== -->
 	
 	<!-- ================== BEGIN BASE JS ================== -->
@@ -77,7 +77,7 @@
 			<!-- begin brand -->
 			<%--<div class="login-header">--%>
 				<%--<div class="brand">--%>
-					<span><img src="Imagenes/logo.png" width="350" /></span> 
+					<span><img src="Imagenes/logo_kardex.png" width="350" /></span> 
                     <br />  
 					<small><asp:Label ID="lblAviso" runat="server" Text="Label"></asp:Label> </small>
                     

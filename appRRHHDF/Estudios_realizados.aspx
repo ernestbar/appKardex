@@ -21,7 +21,7 @@
                         if (!Page_Validators[i].isvalid) {
                             control.className = "form-control form-control-lg inverse-mode ErrorControl";
                         } else {
-                            control.className = "form-control form-control-lg inverse-mode";
+                            control.className = "form-control form-control-lg ";
                         }
                     } catch (e) { }
                 }
@@ -71,7 +71,7 @@
 							
 						</li>
 						<li class="nav-items">
-							<asp:LinkButton ID="lbtnEstudiosRealizados" ForeColor="White" CausesValidation="false" class="nav-link active" OnClick="lbtnEstudiosRealizados_Click" runat="server">Estudios Realizados</asp:LinkButton>
+							<asp:LinkButton ID="lbtnEstudiosRealizados" ForeColor="blue" CausesValidation="false" class="nav-link active" OnClick="lbtnEstudiosRealizados_Click" runat="server">Estudios Realizados</asp:LinkButton>
 						
 						</li>
                         <li class="nav-items">
@@ -153,37 +153,37 @@
                                     <div class="form-group m-b-20 col-lg-6" style="float:left">
                                         <span>Nivel de Estudio*</span>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator17" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="dllNivelEstudio" InitialValue="SELECCIONAR UNA OPCION" Font-Bold="True"></asp:RequiredFieldValidator>
-						                <asp:DropDownList ID="dllNivelEstudio" DataSourceID="odsNivelEducacion" DataTextField="dom_descripcion" OnDataBound="dllNivelEstudio_DataBound" DataValueField="dom_codigo" ForeColor="Black" class="form-control form-control-lg inverse-mode" runat="server"></asp:DropDownList>
+						                <asp:DropDownList ID="dllNivelEstudio" DataSourceID="odsNivelEducacion" DataTextField="dom_descripcion" OnDataBound="dllNivelEstudio_DataBound" DataValueField="dom_codigo" ForeColor="Black" class="form-control form-control-lg " runat="server"></asp:DropDownList>
                                     </div>                                   
                                    <div class="form-group m-b-20 col-lg-6" style="float:left">
                                         <span>Nombre de la Institución*</span>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txtNombreInstitucion" Font-Bold="True"></asp:RequiredFieldValidator>
-						                <asp:TextBox ID="txtNombreInstitucion" ForeColor="Black" class="form-control form-control-lg inverse-mode" runat="server"  placeholder="CENTRO EDUCATIVO / INSTITUCION EDUCATIVA"></asp:TextBox>
+						                <asp:TextBox ID="txtNombreInstitucion" ForeColor="Black" class="form-control form-control-lg " runat="server"  placeholder="CENTRO EDUCATIVO / INSTITUCION EDUCATIVA"></asp:TextBox>
                                     </div>
 					                <div class="form-group m-b-20 col-lg-6" style="float:left">
                                         <span>Ciudad*</span>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txtCiudad" Font-Bold="True"></asp:RequiredFieldValidator>
-						                <asp:TextBox ID="txtCiudad" ForeColor="Black" class="form-control form-control-lg inverse-mode" runat="server"  placeholder="CIUDAD"></asp:TextBox>
+						                <asp:TextBox ID="txtCiudad" ForeColor="Black" class="form-control form-control-lg " runat="server"  placeholder="CIUDAD"></asp:TextBox>
                                     </div>
 								 <div class="form-group m-b-20 col-lg-6" style="float:left">
                                         <span>Area de estudio*</span>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txtAreaEstudio" Font-Bold="True"></asp:RequiredFieldValidator>
-						                <asp:TextBox ID="txtAreaEstudio" ForeColor="Black" class="form-control form-control-lg inverse-mode" runat="server"  placeholder="AREA DE ESTUDIO"></asp:TextBox>
+						                <asp:TextBox ID="txtAreaEstudio" ForeColor="Black" class="form-control form-control-lg " runat="server"  placeholder="AREA DE ESTUDIO"></asp:TextBox>
                                     </div>
                                 <div class="form-group m-b-20  col-lg-6" style="float:left">     
                                         <span>Fecha Inicio</span>
                                     <asp:Label ID="lblFecha1" runat="server" Text="" ForeColor="Red" Font-Size="Smaller"></asp:Label>
                                          <div class="row row-space-6">
 													<div class="col-4">
-                                                        <asp:DropDownList ID="ddlIniDia" class="form-control form-control-lg inverse-mode" ForeColor="Black" runat="server"></asp:DropDownList>
+                                                        <asp:DropDownList ID="ddlIniDia" class="form-control form-control-lg " ForeColor="Black" runat="server"></asp:DropDownList>
 														<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="ddlIniDia" InitialValue="DIA" Font-Bold="True"></asp:RequiredFieldValidator>
 													</div>
 													<div class="col-4">
-														<asp:DropDownList ID="ddlIniMes" class="form-control form-control-lg inverse-mode" ForeColor="Black" runat="server"></asp:DropDownList>
+														<asp:DropDownList ID="ddlIniMes" class="form-control form-control-lg " ForeColor="Black" runat="server"></asp:DropDownList>
 														<asp:RequiredFieldValidator ID="RequiredFieldValidator22" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="ddlIniMes" InitialValue="MES" Font-Bold="True"></asp:RequiredFieldValidator>
 													</div>
 													<div class="col-4">
-														<asp:DropDownList ID="ddlIniAño" class="form-control form-control-lg inverse-mode" ForeColor="Black" runat="server"></asp:DropDownList>
+														<asp:DropDownList ID="ddlIniAño" class="form-control form-control-lg " ForeColor="Black" runat="server"></asp:DropDownList>
 														<asp:RequiredFieldValidator ID="RequiredFieldValidator23" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="ddlIniAño" InitialValue="AÑO" Font-Bold="True"></asp:RequiredFieldValidator>
 													</div>
 												</div>
@@ -194,15 +194,15 @@
 										 <asp:Label ID="lblFecha2" runat="server" Text="" ForeColor="Red" Font-Size="Smaller"></asp:Label>
                                          <div class="row row-space-6">
 													<div class="col-4">
-                                                        <asp:DropDownList ID="ddlFinDia1" class="form-control form-control-lg inverse-mode" ForeColor="Black" runat="server"></asp:DropDownList>
+                                                        <asp:DropDownList ID="ddlFinDia1" class="form-control form-control-lg " ForeColor="Black" runat="server"></asp:DropDownList>
 														<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="ddlFinDia1" InitialValue="DIA" Font-Bold="True"></asp:RequiredFieldValidator>
 													</div>
 													<div class="col-4">
-														<asp:DropDownList ID="ddlFinMes1" class="form-control form-control-lg inverse-mode" ForeColor="Black" runat="server"></asp:DropDownList>
+														<asp:DropDownList ID="ddlFinMes1" class="form-control form-control-lg " ForeColor="Black" runat="server"></asp:DropDownList>
 														<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="ddlFinMes1" InitialValue="MES" Font-Bold="True"></asp:RequiredFieldValidator>
 													</div>
 													<div class="col-4">
-														<asp:DropDownList ID="ddlFinAño1" class="form-control form-control-lg inverse-mode" ForeColor="Black" runat="server"></asp:DropDownList>
+														<asp:DropDownList ID="ddlFinAño1" class="form-control form-control-lg " ForeColor="Black" runat="server"></asp:DropDownList>
 														<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="ddlFinAño1" InitialValue="AÑO" Font-Bold="True"></asp:RequiredFieldValidator>
 													</div>
 												</div>
@@ -212,22 +212,22 @@
                                     <div class="form-group m-b-20 col-lg-6" style="float:left">
                                         <span>Título obtenido (como se ha registrado en el diploma)*</span>
 						               <asp:RequiredFieldValidator ID="RequiredFieldValidator21" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txtTituloOb" Font-Bold="True"></asp:RequiredFieldValidator>
-						               <asp:TextBox ID="txtTituloOb" ForeColor="Black" class="form-control form-control-lg inverse-mode" runat="server"  placeholder=" "></asp:TextBox>
+						               <asp:TextBox ID="txtTituloOb" ForeColor="Black" class="form-control form-control-lg " runat="server"  placeholder=" "></asp:TextBox>
                                     </div>    
                                      <div class="form-group m-b-20  col-lg-6" style="float:left">     
                                         <span>Fecha Emisión de Título</span>
 										 <asp:Label ID="lblFecha3" runat="server" Text="" ForeColor="Red" Font-Size="Smaller"></asp:Label>
                                          <div class="row row-space-6">
 													<div class="col-4">
-                                                        <asp:DropDownList ID="ddlTitDia2" class="form-control form-control-lg inverse-mode" ForeColor="Black" runat="server"></asp:DropDownList>
+                                                        <asp:DropDownList ID="ddlTitDia2" class="form-control form-control-lg " ForeColor="Black" runat="server"></asp:DropDownList>
 														<asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="ddlTitDia2" InitialValue="DIA" Font-Bold="True"></asp:RequiredFieldValidator>
 													</div>
 													<div class="col-4">
-														<asp:DropDownList ID="ddlTitMes2" class="form-control form-control-lg inverse-mode" ForeColor="Black" runat="server"></asp:DropDownList>
+														<asp:DropDownList ID="ddlTitMes2" class="form-control form-control-lg " ForeColor="Black" runat="server"></asp:DropDownList>
 														<asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="ddlTitMes2" InitialValue="MES" Font-Bold="True"></asp:RequiredFieldValidator>
 													</div>
 													<div class="col-4">
-														<asp:DropDownList ID="ddlTitAño2" class="form-control form-control-lg inverse-mode" ForeColor="Black" runat="server"></asp:DropDownList>
+														<asp:DropDownList ID="ddlTitAño2" class="form-control form-control-lg " ForeColor="Black" runat="server"></asp:DropDownList>
 														<asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="ddlTitAño2" InitialValue="AÑO" Font-Bold="True"></asp:RequiredFieldValidator>
 													</div>
 												</div>

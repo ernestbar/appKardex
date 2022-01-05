@@ -35,6 +35,7 @@ namespace appRRHHDF.clases
         private string _PV_TELEFONO_FIJO = "";
         private string _PV_TELEFONO_CELULAR = "";
         private string _PV_USUARIO = "";
+        private string _PV_CARGO = "";
         private byte[] _PV_FOTO;
         private string _PV_ESTADOPR = "";
         private string _PV_DESCRIPCION = "";
@@ -62,6 +63,7 @@ namespace appRRHHDF.clases
         public string PV_TELEFONO_CELULAR { get { return _PV_TELEFONO_CELULAR; } set { _PV_TELEFONO_CELULAR = value; } }
         public DateTime PD_FECHA_NACIMIENTO { get { return _PD_FECHA_NACIMIENTO; } set { _PD_FECHA_NACIMIENTO = value; } }
         public string PV_USUARIO { get { return _PV_USUARIO; } set { _PV_USUARIO = value; } }
+        public string PV_CARGO { get { return _PV_CARGO; } set { _PV_CARGO = value; } }
         public byte[] PV_FOTO { get { return _PV_FOTO; } set { _PV_FOTO = value; } }
         public string PV_ESTADOPR { get { return _PV_ESTADOPR; } set { _PV_ESTADOPR = value; } }
         public string PV_DESCRIPCION { get { return _PV_DESCRIPCION; } set { _PV_DESCRIPCION = value; } }
@@ -92,7 +94,7 @@ namespace appRRHHDF.clases
 				string pV_DIRECCION, string pV_CORREO_ELECTRONICO,
 
                     string pV_TELEFONO_FIJO,
-					string pV_TELEFONO_CELULAR, string pV_USUARIO, byte[] pV_FOTO)
+					string pV_TELEFONO_CELULAR, string pV_USUARIO, byte[] pV_FOTO,string pV_CARGO)
         {
             _PV_TIPO_OPERACION = pV_TIPO_OPERACION;
             _PB_ID_PERSONAL = pB_ID_PERSONAL;
@@ -116,6 +118,7 @@ namespace appRRHHDF.clases
             _PV_TELEFONO_CELULAR = pV_TELEFONO_CELULAR;
             _PV_USUARIO = pV_USUARIO;
             _PV_FOTO = pV_FOTO;
+            _PV_CARGO = pV_CARGO;
         }
         #endregion
 
@@ -137,7 +140,23 @@ namespace appRRHHDF.clases
             }
 
         }
+        public static DataTable PR_SEG_GET_PERSONAL_ID(Int64 PB_ID_CLIENTE)
+        {
+            try
+            {
+                DbCommand cmd = db1.GetStoredProcCommand("PR_SEG_GET_PERSONAL_ID");
+                db1.AddInParameter(cmd, "PB_ID_CLIENTE", DbType.Int64, PB_ID_CLIENTE);
+                cmd.CommandTimeout = int.Parse(ConfigurationManager.AppSettings["CommandTimeout"]);
+                return db1.ExecuteDataSet(cmd).Tables[0];
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+                DataTable dt = new DataTable();
+                return dt;
+            }
 
+        }
         public static DataTable PR_SEG_GET_PERSONAL_ALL()
         {
             try
@@ -226,6 +245,7 @@ namespace appRRHHDF.clases
                 db1.AddInParameter(cmd, "PV_TELEFONO_FIJO", DbType.String, _PV_TELEFONO_FIJO);
                 db1.AddInParameter(cmd, "PV_TELEFONO_CELULAR", DbType.String, _PV_TELEFONO_CELULAR);
                 db1.AddInParameter(cmd, "PV_USUARIO", DbType.String, _PV_USUARIO);
+                db1.AddInParameter(cmd, "PV_CARGO", DbType.String, _PV_CARGO);
                 db1.AddInParameter(cmd, "PV_FOTO", DbType.Binary, _PV_FOTO);
 
                 db1.AddOutParameter(cmd, "PV_ESTADOPR", DbType.String, 30);

@@ -21,7 +21,7 @@
                         if (!Page_Validators[i].isvalid) {
                             control.className = "form-control form-control-lg inverse-mode ErrorControl";
                         } else {
-                            control.className = "form-control form-control-lg inverse-mode";
+                            control.className = "form-control form-control-lg ";
                         }
                     } catch (e) { }
                 }
@@ -85,7 +85,7 @@
 							
 						</li>
 						<li class="nav-items">
-							<asp:LinkButton ID="lbtnOtrosDatos" ForeColor="White" CausesValidation="false" class="nav-link active" OnClick="lbtnOtrosDatos_Click" runat="server">Otros Datos</asp:LinkButton>
+							<asp:LinkButton ID="lbtnOtrosDatos" ForeColor="blue" CausesValidation="false" class="nav-link active" OnClick="lbtnOtrosDatos_Click" runat="server">Otros Datos</asp:LinkButton>
 							
 						</li>
 						<li class="nav-items">
@@ -146,17 +146,17 @@
                                     <div class="form-group m-b-20 col-lg-6" style="float:left">
                                         <span>Seleccion de Documento*</span>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="fuDocumento" InitialValue="" Font-Bold="True"></asp:RequiredFieldValidator>
-                                        <asp:FileUpload ID="fuDocumento" class="form-control form-control-lg inverse-mode" ForeColor="Black" runat="server" />
+                                        <asp:FileUpload ID="fuDocumento" class="form-control form-control-lg " ForeColor="Black" runat="server" />
                                     </div>                                                               
                                     <div class="form-group m-b-20 col-lg-6" style="float:left">
                                         <span>Tipo de Documento*</span>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator17" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="dllTipoDocumento" InitialValue="SELECCIONAR UNA OPCION" Font-Bold="True"></asp:RequiredFieldValidator>
-						                <asp:DropDownList ID="dllTipoDocumento"  DataSourceID="odsOtroDocumento" DataTextField="dom_descripcion" OnDataBound="dllTipoDocumento_DataBound" DataValueField="dom_codigo" ForeColor="Black" class="form-control form-control-lg inverse-mode" runat="server"></asp:DropDownList>
+						                <asp:DropDownList ID="dllTipoDocumento"  DataSourceID="odsOtroDocumento" DataTextField="dom_descripcion" OnDataBound="dllTipoDocumento_DataBound" DataValueField="dom_codigo" ForeColor="Black" class="form-control form-control-lg " runat="server"></asp:DropDownList>
                                     </div>                                   
                                    <div class="form-group m-b-20 col-lg-12" style="float:left">
                                         <span>Descripción*</span>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txtDescripcion" Font-Bold="True"></asp:RequiredFieldValidator>
-						                <asp:TextBox ID="txtDescripcion" ForeColor="Black" class="form-control form-control-lg inverse-mode" runat="server" TextMode="MultiLine"  placeholder="DESCRIPCÌON"></asp:TextBox> 
+						                <asp:TextBox ID="txtDescripcion" ForeColor="Black" class="form-control form-control-lg " runat="server" TextMode="MultiLine"  placeholder="DESCRIPCÌON"></asp:TextBox> 
                                        <span>Máximo hasta 200 carácteres</span>
                                     </div> 
 					                      

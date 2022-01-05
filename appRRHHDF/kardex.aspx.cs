@@ -40,7 +40,11 @@ namespace appRRHHDF
 
         protected void btnEditar_Click(object sender, EventArgs e)
         {
-
+            string id = "";
+            Button obj = (Button)sender;
+            id = obj.CommandArgument.ToString();
+            Session["id_personal"] = id;
+            Response.Redirect("formulario.aspx");
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
@@ -50,7 +54,8 @@ namespace appRRHHDF
 
         protected void btnAdicionarPersonal_Click(object sender, EventArgs e)
         {
-
+            Session["id_personal"] = "0";
+            Response.Redirect("formulario.aspx");
         }
     }
 }

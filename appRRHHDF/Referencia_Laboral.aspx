@@ -21,7 +21,7 @@
                         if (!Page_Validators[i].isvalid) {
                             control.className = "form-control form-control-lg inverse-mode ErrorControl";
                         } else {
-                            control.className = "form-control form-control-lg inverse-mode";
+                            control.className = "form-control form-control-lg ";
                         }
                     } catch (e) { }
                 }
@@ -76,7 +76,7 @@
 							<asp:LinkButton ID="lbtnExpLaboral" ForeColor="White" CausesValidation="false" class="nav-link" OnClick="lbtnExpLaboral_Click" runat="server">Experiencia Laboral</asp:LinkButton>
 						</li>
                         <li class="nav-items">
-							<asp:LinkButton ID="lbtnRefLaboral" ForeColor="White" CausesValidation="false" class="nav-link active" OnClick="lbtnRefLaboral_Click" runat="server">Referencia Laboral</asp:LinkButton>
+							<asp:LinkButton ID="lbtnRefLaboral" ForeColor="blue" CausesValidation="false" class="nav-link active" OnClick="lbtnRefLaboral_Click" runat="server">Referencia Laboral</asp:LinkButton>
 							
 						</li>
 						<li class="nav-items">
@@ -145,32 +145,32 @@
                                    <div class="form-group m-b-20 col-lg-6" style="float:left">
                                         <span>Empresa*</span>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txtEmpresa" Font-Bold="True"></asp:RequiredFieldValidator>
-						                <asp:TextBox ID="txtEmpresa" ForeColor="Black" class="form-control form-control-lg inverse-mode" runat="server"  placeholder="EMPRESA"></asp:TextBox>
+						                <asp:TextBox ID="txtEmpresa" ForeColor="Black" class="form-control form-control-lg " runat="server"  placeholder="EMPRESA"></asp:TextBox>
                                     </div>                                   
                                    <div class="form-group m-b-20 col-lg-6" style="float:left">
                                         <span>Cargo*</span>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txtCargo" Font-Bold="True"></asp:RequiredFieldValidator>
-						                <asp:TextBox ID="txtCargo" ForeColor="Black" class="form-control form-control-lg inverse-mode" runat="server"  placeholder="CARGO"></asp:TextBox>
+						                <asp:TextBox ID="txtCargo" ForeColor="Black" class="form-control form-control-lg " runat="server"  placeholder="CARGO"></asp:TextBox>
                                     </div>
 					                <div class="form-group m-b-20 col-lg-6" style="float:left">
                                         <span>Relación Laboral*</span>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txtRelacionLaboral" Font-Bold="True"></asp:RequiredFieldValidator>
-						                <asp:TextBox ID="txtRelacionLaboral" ForeColor="Black" class="form-control form-control-lg inverse-mode" runat="server"  placeholder="RELACIÒN LABORAL"></asp:TextBox>
+						                <asp:TextBox ID="txtRelacionLaboral" ForeColor="Black" class="form-control form-control-lg " runat="server"  placeholder="RELACIÒN LABORAL"></asp:TextBox>
                                     </div>
 					                <div class="form-group m-b-20 col-lg-3" style="float:left">
                                         <span>Teléfono*</span>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txtTelefono" Font-Bold="True"></asp:RequiredFieldValidator>
-						                <asp:TextBox ID="txtTelefono" ForeColor="Black" class="form-control form-control-lg inverse-mode" runat="server"  placeholder="NÙMERO DE TELEFONO"></asp:TextBox>
+						                <asp:TextBox ID="txtTelefono" ForeColor="Black" class="form-control form-control-lg " runat="server"  placeholder="NÙMERO DE TELEFONO"></asp:TextBox>
                                     </div>
 					                <div class="form-group m-b-20 col-lg-3" style="float:left">
                                         <span>Celular*</span>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txtCelular" Font-Bold="True"></asp:RequiredFieldValidator>
-						                <asp:TextBox ID="txtCelular" ForeColor="Black" class="form-control form-control-lg inverse-mode" runat="server"  placeholder="NÙMERO DE CELULAR"></asp:TextBox>
+						                <asp:TextBox ID="txtCelular" ForeColor="Black" class="form-control form-control-lg " runat="server"  placeholder="NÙMERO DE CELULAR"></asp:TextBox>
                                     </div>
 					                <div class="form-group m-b-20 col-lg-6" style="float:left">
                                         <span>Correo Electrónico*</span>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txtCorreoElectronico" Font-Bold="True"></asp:RequiredFieldValidator>
-						                <asp:TextBox ID="txtCorreoElectronico" ForeColor="Black" class="form-control form-control-lg inverse-mode" runat="server"  placeholder="CORREO ELECTRÒNICO"></asp:TextBox>
+						                <asp:TextBox ID="txtCorreoElectronico" ForeColor="Black" class="form-control form-control-lg " runat="server"  placeholder="CORREO ELECTRÒNICO"></asp:TextBox>
                                     </div>
                                  					                      
                                     <div class="form-group m-b-20 col-lg-12" style="float:left">

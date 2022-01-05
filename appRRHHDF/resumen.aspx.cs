@@ -25,7 +25,8 @@ namespace appRRHHDF
                 {
                     lblAviso.Text = "";
                     lblUsuario.Text = Session["usuario"].ToString();
-                    DataTable dt = clases.Personal.Lista(lblUsuario.Text);
+                    lblIdPersonal.Text = Session["id_personal"].ToString();
+                    DataTable dt = clases.Personal.PR_SEG_GET_PERSONAL_ID(Int64.Parse(lblIdPersonal.Text));
                     if (dt.Rows.Count > 0)
                     {
                         foreach (DataRow dr in dt.Rows)
@@ -88,57 +89,58 @@ namespace appRRHHDF
             }
         }
 
-        protected void lbtnDatosPersonales_Click(object sender, EventArgs e)
-        {
-            Session["usuario"] = lblUsuario.Text;
-            Response.Redirect("formulario.aspx");
-        }
         protected void lbtnDatosFam_Click(object sender, EventArgs e)
         {
-            Session["usuario"] = lblUsuario.Text;
+            Session["id_personal"] = lblIdPersonal.Text;
             Response.Redirect("Datos_fam.aspx");
         }
 
         protected void lbtnEstudiosRealizados_Click(object sender, EventArgs e)
         {
-            Session["usuario"] = lblUsuario.Text;
+            Session["id_personal"] = lblIdPersonal.Text;
             Response.Redirect("Estudios_realizados.aspx");
         }
 
         protected void lbtnCursosTalleres_Click(object sender, EventArgs e)
         {
-            Session["usuario"] = lblUsuario.Text;
+            Session["id_personal"] = lblIdPersonal.Text;
             Response.Redirect("Cursos_Talleres.aspx");
         }
 
         protected void lbtnNivelIdioma_Click(object sender, EventArgs e)
         {
-            Session["usuario"] = lblUsuario.Text;
+            Session["id_personal"] = lblIdPersonal.Text;
             Response.Redirect("nivel_idioma.aspx");
         }
 
         protected void lbtnExpLaboral_Click(object sender, EventArgs e)
         {
-            Session["usuario"] = lblUsuario.Text;
+            Session["id_personal"] = lblIdPersonal.Text;
             Response.Redirect("Experiencia_Laboral.aspx");
         }
 
         protected void lbtnRefLaboral_Click(object sender, EventArgs e)
         {
-            Session["usuario"] = lblUsuario.Text;
+            Session["id_personal"] = lblIdPersonal.Text;
             Response.Redirect("Referencia_Laboral.aspx");
         }
 
         protected void lbtnOtrosDatos_Click(object sender, EventArgs e)
         {
-            Session["usuario"] = lblUsuario.Text;
+            Session["id_personal"] = lblIdPersonal.Text;
             Response.Redirect("Otros_Datos.aspx");
         }
 
         protected void lbtnResumen_Click(object sender, EventArgs e)
         {
-            Session["usuario"] = lblUsuario.Text;
+            Session["id_personal"] = lblIdPersonal.Text;
             Response.Redirect("resumen.aspx");
+        }
+
+        protected void lbtnDatosPersonales_Click(object sender, EventArgs e)
+        {
+            Session["id_personal"] = lblIdPersonal.Text;
+            Response.Redirect("formulario.aspx");
         }
         //protected void Page_Load(object sender, EventArgs e)
         //{

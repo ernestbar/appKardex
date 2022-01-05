@@ -28,64 +28,92 @@ namespace appRRHHDF
                 {
                     lblAviso.Text = "";
                     lblUsuario.Text = Session["usuario"].ToString();
-                    DataTable dt= clases.Personal.Lista(lblUsuario.Text);
-                    if (dt.Rows.Count > 0)
+                    lblIdPersonal.Text = Session["id_personal"].ToString();
+                    if (lblIdPersonal.Text == "")
                     {
-                        foreach (DataRow dr in dt.Rows)
+                        txtApellidoCasada.Text = "";
+                        txtCelular.Text = "";
+                        txtCiudadRes.Text = "";
+                        txtComplemento.Text = "";
+                        txtDireccion.Text = "";
+                        txtEmail.Text = "";
+                        txtNombres.Text = "";
+                        txtNumeroDocumento.Text = "";
+                        txtPrimerApellido.Text = "";
+                        txtSegundoApellido.Text = "";
+                        txtTelefono.Text = "";
+                        ddlDepartaentoRes.DataBind();
+                        ddlEsdatoCivil.DataBind();
+                        ddlExpedido.DataBind();
+                        ddlGenero.DataBind();
+                        ddlPaisRes.DataBind();
+                        ddlTipoDocumento.DataBind();
+                        txtCargo.Text = "";
+                        
+                    }
+                    else 
+                    {
+                        DataTable dt = clases.Personal.PR_SEG_GET_PERSONAL_ID(Int64.Parse(lblIdPersonal.Text));
+                        if (dt.Rows.Count > 0)
                         {
-                            if (String.IsNullOrEmpty(dr["PER_ID_PERSONAL"].ToString())) { lblIdPersonal.Text = ""; } else { lblIdPersonal.Text = dr["PER_ID_PERSONAL"].ToString(); }
-                            if (String.IsNullOrEmpty(dr["CORREO_ELECTRONICO"].ToString())) { txtEmail.Text = ""; } else { txtEmail.Text = dr["CORREO_ELECTRONICO"].ToString(); }
-                            if (String.IsNullOrEmpty(dr["PER_NOMBRE"].ToString())) { txtNombres.Text = ""; } else { txtNombres.Text = dr["PER_NOMBRE"].ToString(); }
-                            if (String.IsNullOrEmpty(dr["PER_APELLIDO_PATERNO"].ToString())) { txtPrimerApellido.Text = ""; } else { txtPrimerApellido.Text = dr["PER_APELLIDO_PATERNO"].ToString(); }
-                            if (String.IsNullOrEmpty(dr["PER_APELLIDO_MATERNO"].ToString())) { txtSegundoApellido.Text = ""; } else { txtSegundoApellido.Text = dr["PER_APELLIDO_MATERNO"].ToString(); }
-                            if (String.IsNullOrEmpty(dr["PER_APELLIDO_MARITAL"].ToString())) { txtApellidoCasada.Text = ""; } else { txtApellidoCasada.Text = dr["PER_APELLIDO_MARITAL"].ToString(); }
-                            if (String.IsNullOrEmpty(dr["PER_NUMERO_DOCUMENTO"].ToString())) { txtNumeroDocumento.Text = ""; } else { txtNumeroDocumento.Text = dr["PER_NUMERO_DOCUMENTO"].ToString(); }
-                            if (String.IsNullOrEmpty(dr["PER_TIPO_DOCUMENTO"].ToString())) { ddlTipoDocumento.DataBind(); } else { ddlTipoDocumento.SelectedValue = dr["PER_TIPO_DOCUMENTO"].ToString(); }
-                            if (String.IsNullOrEmpty(dr["PER_COMPLEMENTO"].ToString())) { txtComplemento.Text = ""; } else { txtComplemento.Text = dr["PER_COMPLEMENTO"].ToString(); }
-                            if (String.IsNullOrEmpty(dr["PER_EXPEDIDO"].ToString())) { ddlExpedido.DataBind(); } else { ddlExpedido.SelectedValue = dr["PER_EXPEDIDO"].ToString(); }
-                            if (String.IsNullOrEmpty(dr["PER_ESTADO_CIVIL"].ToString())) { ddlEsdatoCivil.DataBind(); } else { ddlEsdatoCivil.SelectedValue = dr["PER_ESTADO_CIVIL"].ToString(); }
-                            if (String.IsNullOrEmpty(dr["PER_GENERO"].ToString())) { ddlGenero.DataBind(); } else { ddlGenero.SelectedValue = dr["PER_GENERO"].ToString(); }
-                            if (String.IsNullOrEmpty(dr["PER_FECHA_NACIMIENTO"].ToString())) { cargar_calendarios(); }
-                            else
+                            foreach (DataRow dr in dt.Rows)
                             {
-                                DateTime fecha_aux=DateTime.Parse(dr["PER_FECHA_NACIMIENTO"].ToString());
-                                ddlNacDia.SelectedValue = fecha_aux.Day.ToString();
-                                ddlNacMes.SelectedValue = fecha_aux.Month.ToString();
-                                ddlNacAño.SelectedValue = fecha_aux.Year.ToString();
+                                if (String.IsNullOrEmpty(dr["PER_ID_PERSONAL"].ToString())) { lblIdPersonal.Text = ""; } else { lblIdPersonal.Text = dr["PER_ID_PERSONAL"].ToString(); }
+                                if (String.IsNullOrEmpty(dr["CORREO_ELECTRONICO"].ToString())) { txtEmail.Text = ""; } else { txtEmail.Text = dr["CORREO_ELECTRONICO"].ToString(); }
+                                if (String.IsNullOrEmpty(dr["PER_NOMBRE"].ToString())) { txtNombres.Text = ""; } else { txtNombres.Text = dr["PER_NOMBRE"].ToString(); }
+                                if (String.IsNullOrEmpty(dr["PER_APELLIDO_PATERNO"].ToString())) { txtPrimerApellido.Text = ""; } else { txtPrimerApellido.Text = dr["PER_APELLIDO_PATERNO"].ToString(); }
+                                if (String.IsNullOrEmpty(dr["PER_APELLIDO_MATERNO"].ToString())) { txtSegundoApellido.Text = ""; } else { txtSegundoApellido.Text = dr["PER_APELLIDO_MATERNO"].ToString(); }
+                                if (String.IsNullOrEmpty(dr["PER_APELLIDO_MARITAL"].ToString())) { txtApellidoCasada.Text = ""; } else { txtApellidoCasada.Text = dr["PER_APELLIDO_MARITAL"].ToString(); }
+                                if (String.IsNullOrEmpty(dr["PER_NUMERO_DOCUMENTO"].ToString())) { txtNumeroDocumento.Text = ""; } else { txtNumeroDocumento.Text = dr["PER_NUMERO_DOCUMENTO"].ToString(); }
+                                if (String.IsNullOrEmpty(dr["PER_TIPO_DOCUMENTO"].ToString())) { ddlTipoDocumento.DataBind(); } else { ddlTipoDocumento.SelectedValue = dr["PER_TIPO_DOCUMENTO"].ToString(); }
+                                if (String.IsNullOrEmpty(dr["PER_COMPLEMENTO"].ToString())) { txtComplemento.Text = ""; } else { txtComplemento.Text = dr["PER_COMPLEMENTO"].ToString(); }
+                                if (String.IsNullOrEmpty(dr["CAR_COD_CARGO"].ToString())) { txtCargo.Text = ""; } else { txtCargo.Text = dr["CAR_COD_CARGO"].ToString(); }
+                                if (String.IsNullOrEmpty(dr["PER_EXPEDIDO"].ToString())) { ddlExpedido.DataBind(); } else { ddlExpedido.SelectedValue = dr["PER_EXPEDIDO"].ToString(); }
+                                if (String.IsNullOrEmpty(dr["PER_ESTADO_CIVIL"].ToString())) { ddlEsdatoCivil.DataBind(); } else { ddlEsdatoCivil.SelectedValue = dr["PER_ESTADO_CIVIL"].ToString(); }
+                                if (String.IsNullOrEmpty(dr["PER_GENERO"].ToString())) { ddlGenero.DataBind(); } else { ddlGenero.SelectedValue = dr["PER_GENERO"].ToString(); }
+                                if (String.IsNullOrEmpty(dr["PER_FECHA_NACIMIENTO"].ToString())) { cargar_calendarios(); }
+                                else
+                                {
+                                    DateTime fecha_aux = DateTime.Parse(dr["PER_FECHA_NACIMIENTO"].ToString());
+                                    ddlNacDia.SelectedValue = fecha_aux.Day.ToString();
+                                    ddlNacMes.SelectedValue = fecha_aux.Month.ToString();
+                                    ddlNacAño.SelectedValue = fecha_aux.Year.ToString();
 
-                            }
-                            if (String.IsNullOrEmpty(dr["TELEFONO_FIJO"].ToString())) { txtTelefono.Text = ""; } else { txtTelefono.Text = dr["TELEFONO_FIJO"].ToString(); }
-                            if (String.IsNullOrEmpty(dr["TELEFONO_CELULAR"].ToString())) { txtCelular.Text = ""; } else { txtCelular.Text = dr["TELEFONO_CELULAR"].ToString(); }
-                            if (String.IsNullOrEmpty(dr["PAI_ID_PAIS"].ToString())) 
-                            { ddlPaisRes.DataBind(); } 
-                            else 
-                            {
-                                ddlPaisRes.DataBind();
-                                ListItem valor = new ListItem();
-                                valor.Text= dr["DESC_PAIS"].ToString();
-                                valor.Value = dr["PAI_ID_PAIS"].ToString();
-                                int indice= ddlPaisRes.Items.IndexOf(valor);
-                                ddlPaisRes.SelectedIndex = indice;
-                                ddlDepartaentoRes.DataBind();
-                            }
-                            if (String.IsNullOrEmpty(dr["CIU_ID_CIUDAD"].ToString())) { ddlDepartaentoRes.DataBind(); } 
-                            else 
-                            {
-                                ddlDepartaentoRes.SelectedValue = dr["CIU_ID_CIUDAD"].ToString();
-                            }
-                            if (String.IsNullOrEmpty(dr["DIR_CIUDAD_RESIDENCIA"].ToString())) { txtCiudadRes.Text = ""; } else { txtCiudadRes.Text = dr["DIR_CIUDAD_RESIDENCIA"].ToString(); }
-                            if (String.IsNullOrEmpty(dr["DIR_DIRECCION"].ToString())) { txtDireccion.Text = ""; } else { txtDireccion.Text = dr["DIR_DIRECCION"].ToString(); }
-                            if (String.IsNullOrEmpty(dr["PER_FOTO"].ToString())) { imgFoto.ImageUrl = "~/Fotos/sin_imagen.png"; }
-                            else
-                            {   
-                                byte[] foto_aux= (byte[])dr["PER_FOTO"];
+                                }
+                                if (String.IsNullOrEmpty(dr["TELEFONO_FIJO"].ToString())) { txtTelefono.Text = ""; } else { txtTelefono.Text = dr["TELEFONO_FIJO"].ToString(); }
+                                if (String.IsNullOrEmpty(dr["TELEFONO_CELULAR"].ToString())) { txtCelular.Text = ""; } else { txtCelular.Text = dr["TELEFONO_CELULAR"].ToString(); }
+                                if (String.IsNullOrEmpty(dr["PAI_ID_PAIS"].ToString()))
+                                { ddlPaisRes.DataBind(); }
+                                else
+                                {
+                                    ddlPaisRes.DataBind();
+                                    ListItem valor = new ListItem();
+                                    valor.Text = dr["DESC_PAIS"].ToString();
+                                    valor.Value = dr["PAI_ID_PAIS"].ToString();
+                                    int indice = ddlPaisRes.Items.IndexOf(valor);
+                                    ddlPaisRes.SelectedIndex = indice;
+                                    ddlDepartaentoRes.DataBind();
+                                }
+                                if (String.IsNullOrEmpty(dr["CIU_ID_CIUDAD"].ToString())) { ddlDepartaentoRes.DataBind(); }
+                                else
+                                {
+                                    ddlDepartaentoRes.SelectedValue = dr["CIU_ID_CIUDAD"].ToString();
+                                }
+                                if (String.IsNullOrEmpty(dr["DIR_CIUDAD_RESIDENCIA"].ToString())) { txtCiudadRes.Text = ""; } else { txtCiudadRes.Text = dr["DIR_CIUDAD_RESIDENCIA"].ToString(); }
+                                if (String.IsNullOrEmpty(dr["DIR_DIRECCION"].ToString())) { txtDireccion.Text = ""; } else { txtDireccion.Text = dr["DIR_DIRECCION"].ToString(); }
+                                if (String.IsNullOrEmpty(dr["PER_FOTO"].ToString())) { imgFoto.ImageUrl = "~/Fotos/sin_imagen.png"; }
+                                else
+                                {
+                                    byte[] foto_aux = (byte[])dr["PER_FOTO"];
 
-                                string imageBase64 = Convert.ToBase64String(foto_aux);
-                                string imageSrc = string.Format("data:image/gif;base64,{0}", imageBase64);
-                                imgFoto.ImageUrl = imageSrc;
+                                    string imageBase64 = Convert.ToBase64String(foto_aux);
+                                    string imageSrc = string.Format("data:image/gif;base64,{0}", imageBase64);
+                                    imgFoto.ImageUrl = imageSrc;
+                                }
                             }
                         }
                     }
+                    
                 }
             }
            
@@ -299,13 +327,27 @@ namespace appRRHHDF
                 }
                 if (lblFecha.Text == "")
                 {
-                    clases.Personal obj = new clases.Personal("I", Int64.Parse(lblIdPersonal.Text), txtNombres.Text, txtPrimerApellido.Text,
-                       txtSegundoApellido.Text, txtApellidoCasada.Text, ddlTipoDocumento.SelectedValue, txtNumeroDocumento.Text,
-                       txtComplemento.Text, ddlExpedido.SelectedValue, ddlGenero.SelectedValue, ddlEsdatoCivil.SelectedValue,
-                       DateTime.Parse(fecha), Int64.Parse(ddlPaisRes.SelectedValue), Int64.Parse(ddlDepartaentoRes.SelectedValue), txtCiudadRes.Text, txtDireccion.Text,
-                       txtEmail.Text, txtTelefono.Text, txtCelular.Text, lblUsuario.Text, data);
-                    string[] resultado = obj.ABM().Split('|');
-                    lblAviso.Text = resultado[3];
+                    if (lblIdPersonal.Text == "0")
+                    {
+                        clases.Personal obj = new clases.Personal("I", Int64.Parse(lblIdPersonal.Text), txtNombres.Text, txtPrimerApellido.Text,
+                          txtSegundoApellido.Text, txtApellidoCasada.Text, ddlTipoDocumento.SelectedValue, txtNumeroDocumento.Text,
+                          txtComplemento.Text, ddlExpedido.SelectedValue, ddlGenero.SelectedValue, ddlEsdatoCivil.SelectedValue,
+                          DateTime.Parse(fecha), Int64.Parse(ddlPaisRes.SelectedValue), Int64.Parse(ddlDepartaentoRes.SelectedValue), txtCiudadRes.Text, txtDireccion.Text,
+                          txtEmail.Text, txtTelefono.Text, txtCelular.Text, lblUsuario.Text, data,txtCargo.Text);
+                        string[] resultado = obj.ABM().Split('|');
+                        lblAviso.Text = resultado[3];
+                    }
+                    else
+                    {
+                        clases.Personal obj = new clases.Personal("U", Int64.Parse(lblIdPersonal.Text), txtNombres.Text, txtPrimerApellido.Text,
+                           txtSegundoApellido.Text, txtApellidoCasada.Text, ddlTipoDocumento.SelectedValue, txtNumeroDocumento.Text,
+                           txtComplemento.Text, ddlExpedido.SelectedValue, ddlGenero.SelectedValue, ddlEsdatoCivil.SelectedValue,
+                           DateTime.Parse(fecha), Int64.Parse(ddlPaisRes.SelectedValue), Int64.Parse(ddlDepartaentoRes.SelectedValue), txtCiudadRes.Text, txtDireccion.Text,
+                           txtEmail.Text, txtTelefono.Text, txtCelular.Text, lblUsuario.Text, data, txtCargo.Text);
+                        string[] resultado = obj.ABM().Split('|');
+                        lblAviso.Text = resultado[3];
+                    }
+                    
                 }
                 /////////////CARGA LOS DATOS DEL PERFIL NUEVAMENTE////////////
                 lblUsuario.Text = Session["usuario"].ToString();
@@ -399,55 +441,55 @@ namespace appRRHHDF
         }
         protected void lbtnDatosFam_Click(object sender, EventArgs e)
         {
-            Session["usuario"] = lblUsuario.Text;
+            Session["id_personal"] = lblIdPersonal.Text;
             Response.Redirect("Datos_fam.aspx");
         }
 
         protected void lbtnEstudiosRealizados_Click(object sender, EventArgs e)
         {
-            Session["usuario"] = lblUsuario.Text;
+            Session["id_personal"] = lblIdPersonal.Text;
             Response.Redirect("Estudios_realizados.aspx");
         }
 
         protected void lbtnCursosTalleres_Click(object sender, EventArgs e)
         {
-            Session["usuario"] = lblUsuario.Text;
+            Session["id_personal"] = lblIdPersonal.Text;
             Response.Redirect("Cursos_Talleres.aspx");
         }
 
         protected void lbtnNivelIdioma_Click(object sender, EventArgs e)
         {
-            Session["usuario"] = lblUsuario.Text;
+            Session["id_personal"] = lblIdPersonal.Text;
             Response.Redirect("nivel_idioma.aspx");
         }
 
         protected void lbtnExpLaboral_Click(object sender, EventArgs e)
         {
-            Session["usuario"] = lblUsuario.Text;
+            Session["id_personal"] = lblIdPersonal.Text;
             Response.Redirect("Experiencia_Laboral.aspx");
         }
 
         protected void lbtnRefLaboral_Click(object sender, EventArgs e)
         {
-            Session["usuario"] = lblUsuario.Text;
+            Session["id_personal"] = lblIdPersonal.Text;
             Response.Redirect("Referencia_Laboral.aspx");
         }
 
         protected void lbtnOtrosDatos_Click(object sender, EventArgs e)
         {
-            Session["usuario"] = lblUsuario.Text;
+            Session["id_personal"] = lblIdPersonal.Text;
             Response.Redirect("Otros_Datos.aspx");
         }
 
         protected void lbtnResumen_Click(object sender, EventArgs e)
         {
-            Session["usuario"] = lblUsuario.Text;
+            Session["id_personal"] = lblIdPersonal.Text;
             Response.Redirect("resumen.aspx");
         }
 
         protected void lbtnDatosPersonales_Click(object sender, EventArgs e)
         {
-            Session["usuario"] = lblUsuario.Text;
+            Session["id_personal"] = lblIdPersonal.Text;
             Response.Redirect("formulario.aspx");
         }
     }

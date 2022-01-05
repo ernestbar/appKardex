@@ -21,7 +21,7 @@
                         if (!Page_Validators[i].isvalid) {
                             control.className = "form-control form-control-lg inverse-mode ErrorControl";
                         } else {
-                            control.className = "form-control form-control-lg inverse-mode";
+                            control.className = "form-control form-control-lg ";
                         }
                     } catch (e) { }
                 }
@@ -77,7 +77,7 @@
 							<asp:LinkButton ID="lbtnDatosPersonales" CausesValidation="false" ForeColor="White" class="nav-link" OnClick="lbtnDatosPersonales_Click" runat="server">Datos personales</asp:LinkButton>
 						</li>
 						<li class="nav-items">
-							<asp:LinkButton ID="lbtnDatosFam" CausesValidation="false" ForeColor="White" class="nav-link active" OnClick="lbtnDatosFam_Click" runat="server">Datos familiares</asp:LinkButton>
+							<asp:LinkButton ID="lbtnDatosFam" CausesValidation="false" ForeColor="blue" class="nav-link active" OnClick="lbtnDatosFam_Click" runat="server">Datos familiares</asp:LinkButton>
 							
 						</li>
 						<li class="nav-items">
@@ -162,42 +162,42 @@
                                     <div class="form-group m-b-20 col-lg-12" style="float:left">
                                         <span>Tipo Parentesco*</span>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator17" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="dllTipoParectesco" InitialValue="SELECCIONAR UNA OPCION" Font-Bold="True"></asp:RequiredFieldValidator>
-						                <asp:DropDownList ID="dllTipoParectesco" DataSourceID="odsTipoParentesco" DataTextField="dom_descripcion" OnDataBound="dllTipoParectesco_DataBound" DataValueField="dom_codigo"  ForeColor="Black" class="form-control form-control-lg inverse-mode" runat="server"></asp:DropDownList>
+						                <asp:DropDownList ID="dllTipoParectesco" DataSourceID="odsTipoParentesco" DataTextField="dom_descripcion" OnDataBound="dllTipoParectesco_DataBound" DataValueField="dom_codigo"  ForeColor="Black" class="form-control form-control-lg " runat="server"></asp:DropDownList>
                                     </div>                                   
                                    <div class="form-group m-b-20 col-lg-6" style="float:left">
                                         <span>Apellido Paterno*</span>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator18" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txtApellidoPaterno" Font-Bold="True"></asp:RequiredFieldValidator>
-						                <asp:TextBox ID="txtApellidoPaterno" ForeColor="Black" class="form-control form-control-lg inverse-mode" runat="server"  placeholder="APELLIDO PATERNO"></asp:TextBox>
+						                <asp:TextBox ID="txtApellidoPaterno" ForeColor="Black" class="form-control form-control-lg " runat="server"  placeholder="APELLIDO PATERNO"></asp:TextBox>
                                     </div>
 					                <div class="form-group m-b-20 col-lg-6" style="float:left">
                                         <span>Apellido Materno*</span>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator19" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txtApellidoMaterno" Font-Bold="True"></asp:RequiredFieldValidator>
-						                <asp:TextBox ID="txtApellidoMaterno" ForeColor="Black" class="form-control form-control-lg inverse-mode" runat="server"  placeholder="APELLIDO MATERNO"></asp:TextBox>
+						                <asp:TextBox ID="txtApellidoMaterno" ForeColor="Black" class="form-control form-control-lg " runat="server"  placeholder="APELLIDO MATERNO"></asp:TextBox>
                                     </div>
 					                <div class="form-group m-b-20 col-lg-12" style="float:left">
                                         <span>Nombres*</span>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txtNombres" Font-Bold="True"></asp:RequiredFieldValidator>
-						                <asp:TextBox ID="txtNombres" ForeColor="Black" class="form-control form-control-lg inverse-mode" runat="server"  placeholder="NOMBRES"></asp:TextBox>
+						                <asp:TextBox ID="txtNombres" ForeColor="Black" class="form-control form-control-lg " runat="server"  placeholder="NOMBRES"></asp:TextBox>
                                     </div>
                                     <div class="form-group m-b-20 col-lg-6" style="float:left">
                                         <span>Tipo Documento*</span>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator20" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="ddlTipoDocumento" InitialValue="SELECCIONAR UNA OPCION" Font-Bold="True"></asp:RequiredFieldValidator>
-						                <asp:DropDownList ID="ddlTipoDocumento" DataSourceID="odsTipoDocumento" DataTextField="dom_descripcion" OnDataBound="ddlTipoDocumento_DataBound" DataValueField="dom_codigo" ForeColor="Black" class="form-control form-control-lg inverse-mode" runat="server"></asp:DropDownList>
+						                <asp:DropDownList ID="ddlTipoDocumento" DataSourceID="odsTipoDocumento" DataTextField="dom_descripcion" OnDataBound="ddlTipoDocumento_DataBound" DataValueField="dom_codigo" ForeColor="Black" class="form-control form-control-lg " runat="server"></asp:DropDownList>
                                     </div>      
                                     <div class="form-group m-b-20 col-lg-6" style="float:left">
                                         <span>Número de Documento*</span>
 						               <asp:RequiredFieldValidator ID="RequiredFieldValidator21" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txtNumeroDocumento" Font-Bold="True"></asp:RequiredFieldValidator>
-						               <asp:TextBox ID="txtNumeroDocumento" ForeColor="Black" class="form-control form-control-lg inverse-mode" runat="server"  placeholder="NUMERO DE DOCUMENTO"></asp:TextBox>
+						               <asp:TextBox ID="txtNumeroDocumento" ForeColor="Black" class="form-control form-control-lg " runat="server"  placeholder="NUMERO DE DOCUMENTO"></asp:TextBox>
                                     </div>                                           
 					                <div class="form-group m-b-20 col-lg-6" style="float:left">
                                         <span>Complemento</span>
                                         <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator16" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="txtComplemento" Font-Bold="True"></asp:RequiredFieldValidator>--%>
-						                <asp:TextBox ID="txtComplemento" ForeColor="Black" class="form-control form-control-lg inverse-mode" runat="server"  placeholder="COMPLEMENTO"></asp:TextBox>
+						                <asp:TextBox ID="txtComplemento" ForeColor="Black" class="form-control form-control-lg " runat="server"  placeholder="COMPLEMENTO"></asp:TextBox>
                                     </div>     
                                     <div class="form-group m-b-20 col-lg-6" style="float:left">
                                         <span>Expedido en*</span>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator22" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="ddlExpedido" InitialValue="SELECCIONAR UNA OPCION" Font-Bold="True"></asp:RequiredFieldValidator>
-						                <asp:DropDownList ID="ddlExpedido" DataSourceID="odsExpedido" DataTextField="dom_descripcion" OnDataBound="ddlExpedido_DataBound" DataValueField="dom_codigo"  ForeColor="Black" class="form-control form-control-lg inverse-mode" runat="server"></asp:DropDownList>
+						                <asp:DropDownList ID="ddlExpedido" DataSourceID="odsExpedido" DataTextField="dom_descripcion" OnDataBound="ddlExpedido_DataBound" DataValueField="dom_codigo"  ForeColor="Black" class="form-control form-control-lg " runat="server"></asp:DropDownList>
                                     </div>         
                                     <div class="form-group m-b-20 col-lg-12" style="float:left">
                                         <span>Debe llenar los campos marcados con (*)</span><br />

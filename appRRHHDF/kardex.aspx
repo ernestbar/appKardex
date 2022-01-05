@@ -38,7 +38,7 @@
             <!-- begin breadcrumb -->
 			<ol class="breadcrumb pull-right">
 				<li class="breadcrumb-item"><a href="javascript:;">Kardex</a></li>
-				<li class="breadcrumb-item active">Estudios Realizados</li>
+				
 			</ol>
 			<!-- end breadcrumb -->
 			<!-- begin page-header -->
@@ -75,7 +75,7 @@
 																<td><asp:Label ID="lblNombres" runat="server" Text='<%# Eval("CORREO_ELECTRONICO") %>'></asp:Label></td>
 																<td>
 																	<asp:Button ID="btnEditar" class="btn btn-success btn-sm" Enabled="true" CommandArgument='<%# Eval("PER_ID_PERSONAL") %>' OnClick="btnEditar_Click" runat="server" Text="Editar" ToolTip="Editar registro" />
-																		<asp:Button ID="btnEliminar" class="btn btn-success btn-sm" Enabled="true" CommandArgument='<%# Eval("PER_ID_PERSONAL") %>' OnClientClick="return confirm('Seguro que desea eliminar el registro???')" OnClick="btnEliminar_Click"  runat="server" Text="Eliminar" ToolTip="Eliminar Registro" />
+																		<%--<asp:Button ID="btnEliminar" class="btn btn-success btn-sm" Enabled="true" CommandArgument='<%# Eval("PER_ID_PERSONAL") %>' OnClientClick="return confirm('Seguro que desea eliminar el registro???')" OnClick="btnEliminar_Click"  runat="server" Text="Eliminar" ToolTip="Eliminar Registro" />--%>
 																</td>
 															</tr>
 														</ItemTemplate>

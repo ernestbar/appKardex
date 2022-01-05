@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>iHuman</title>
+	<title>Kardex</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
@@ -18,7 +18,7 @@
 	<link href="assets/plugins/animate/animate.min.css" rel="stylesheet" />
 	<link href="assets/css/default/style.min.css" rel="stylesheet" />
 	<link href="assets/css/default/style-responsive.min.css" rel="stylesheet" />
-	<link href="assets/css/default/theme/default.css" rel="stylesheet" id="theme" />
+	<link href="assets/css/default/theme/green.css" rel="stylesheet" id="theme" />
 	<!-- ================== END BASE CSS STYLE ================== -->
 	
 	<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
@@ -52,17 +52,17 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="Stylesheet" type="text/css" />
 </head>
-<body style="background-color:#FFFFFF;">
+<body>
 	<!-- begin #page-loader -->
 	<div id="page-loader" class="fade show"><span class="spinner"></span></div>
 	<!-- end #page-loader -->
 	<!-- begin #page-container -->
 	<div id="page-container" class="fade page-sidebar-fixed page-header-fixed">
 		<!-- begin #header -->
-		<div id="header" class="header navbar-default" style="background-color:#6d6d6f;">
+		<div id="header" class="header navbar-default">
 			<!-- begin navbar-header -->
 			<div class="navbar-header">
-				<img src="Imagenes/logo.png" width="70" />
+				<img src="Imagenes/logo_kardex.png" width="70" />
 				<%--<b>Amas</b> Cuotas--%> 
 				
 				<button type="button" class="navbar-toggle" data-click="sidebar-toggled">
@@ -103,7 +103,7 @@
 		</div>
 		<!-- end #header -->
 		<!-- begin #sidebar -->
-		<div id="sidebar" class="sidebar" style="background-color:#6d6d6f;">
+		<div id="sidebar" class="sidebar">
 			<!-- begin sidebar scrollbar -->
 			<div data-scrollbar="true" data-height="100%">
 				<!-- begin sidebar user -->
@@ -132,14 +132,14 @@
 				<!-- end sidebar user -->
 				<!-- begin sidebar nav -->
 				<ul class="nav">
-					<li class="nav-header">Inicio</li>
+					<li class="nav-header">Kardex</li>
 					<li class="has-sub">
-						<a href="inicio.aspx">
+						<a href="kardex.aspx">
 							<i class="fa fa-home"></i>
-							<span>Inicio</span>
+							<span>Administrar Personal</span>
 						</a>
 					</li>
-					<li class="nav-header">Mi Perfil</li>
+					<%--<li class="nav-header">Mi Perfil</li>
 					<li class="has-sub active">
 						<a href="formulario.aspx">
 							<i class="fa fa-user-circle"></i> 
@@ -166,7 +166,7 @@
                             <i class="fa fa-download"></i>
 							<span>Tutoriales</span>
 						</a>
-					</li>
+					</li>--%>
 					
 					<!-- begin sidebar minify button -->
 					<li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify" style="background-color:#FFFFFF;"><i class="fa fa-angle-double-left"></i></a></li>

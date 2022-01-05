@@ -110,7 +110,7 @@
 						<li class="nav-items"><asp:LinkButton ID="lbtnExpLaboral" ForeColor="White" CausesValidation="false" class="nav-link" OnClick="lbtnExpLaboral_Click" runat="server">Experiencia Laboral</asp:LinkButton></li>
                         <li class="nav-items"><asp:LinkButton ID="lbtnRefLaboral" ForeColor="White" CausesValidation="false" class="nav-link" OnClick="lbtnRefLaboral_Click" runat="server">Referencia Laboral</asp:LinkButton></li>
 						<li class="nav-items"><asp:LinkButton ID="lbtnOtrosDatos" ForeColor="White" CausesValidation="false" class="nav-link" OnClick="lbtnOtrosDatos_Click" runat="server">Otros Datos</asp:LinkButton></li>
-						<li class="nav-items"><asp:LinkButton ID="lbtnResumen" ForeColor="White" CausesValidation="false" class="nav-link active" OnClick="lbtnResumen_Click" runat="server">Resumen</asp:LinkButton></li>
+						<li class="nav-items"><asp:LinkButton ID="lbtnResumen" ForeColor="blue" CausesValidation="false" class="nav-link active" OnClick="lbtnResumen_Click" runat="server">Resumen</asp:LinkButton></li>
 					</ul>
                   
 					<!-- end nav-tabs -->

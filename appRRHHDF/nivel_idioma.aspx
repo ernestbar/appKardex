@@ -21,7 +21,7 @@
                         if (!Page_Validators[i].isvalid) {
                             control.className = "form-control form-control-lg inverse-mode ErrorControl";
                         } else {
-                            control.className = "form-control form-control-lg inverse-mode";
+                            control.className = "form-control form-control-lg ";
                         }
                     } catch (e) { }
                 }
@@ -79,7 +79,7 @@
 							<asp:LinkButton ID="lbtnCursosTalleres" ForeColor="White" CausesValidation="false" class="nav-link" OnClick="lbtnCursosTalleres_Click" runat="server">Cursos/Talleres</asp:LinkButton>
 						</li>
 						<li class="nav-items">
-							<asp:LinkButton ID="lbtnNivelIdioma" ForeColor="White" CausesValidation="false" class="nav-link active" OnClick="lbtnNivelIdioma_Click" runat="server">Idiomas</asp:LinkButton>
+							<asp:LinkButton ID="lbtnNivelIdioma" ForeColor="Blue" CausesValidation="false" class="nav-link active" OnClick="lbtnNivelIdioma_Click" runat="server">Idiomas</asp:LinkButton>
 						</li>
 						<li class="nav-items">
 							<asp:LinkButton ID="lbtnExpLaboral" ForeColor="White" CausesValidation="false" class="nav-link" OnClick="lbtnExpLaboral_Click" runat="server">Experiencia Laboral</asp:LinkButton>
@@ -153,22 +153,22 @@
                                     <div class="form-group m-b-20 col-lg-6" style="float:left">
                                         <span>Idioma*</span>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator17" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="dllIdiomas" InitialValue="SELECCIONAR UNA OPCION" Font-Bold="True"></asp:RequiredFieldValidator>
-						                <asp:DropDownList ID="dllIdiomas" DataSourceID="odsIdiomas" DataTextField="dom_descripcion" OnDataBound="dllIdiomas_DataBound" DataValueField="dom_codigo"  ForeColor="Black" class="form-control form-control-lg inverse-mode" runat="server"></asp:DropDownList>
+						                <asp:DropDownList ID="dllIdiomas" DataSourceID="odsIdiomas" DataTextField="dom_descripcion" OnDataBound="dllIdiomas_DataBound" DataValueField="dom_codigo"  ForeColor="Black" class="form-control form-control-lg " runat="server"></asp:DropDownList>
                                     </div>      
                                    <div class="form-group m-b-20 col-lg-6" style="float:left">
                                         <span>Nivel de Lectura*</span>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="ddlNivelLectura" InitialValue="SELECCIONAR UNA OPCION" Font-Bold="True"></asp:RequiredFieldValidator>
-						                <asp:DropDownList ID="ddlNivelLectura" DataSourceID="odsNivelIdioma" DataTextField="dom_descripcion" OnDataBound="ddlNivelLectura_DataBound" DataValueField="dom_codigo"  ForeColor="Black" class="form-control form-control-lg inverse-mode" runat="server"></asp:DropDownList>
+						                <asp:DropDownList ID="ddlNivelLectura" DataSourceID="odsNivelIdioma" DataTextField="dom_descripcion" OnDataBound="ddlNivelLectura_DataBound" DataValueField="dom_codigo"  ForeColor="Black" class="form-control form-control-lg " runat="server"></asp:DropDownList>
                                     </div>   
                                 <div class="form-group m-b-20 col-lg-6" style="float:left">
                                         <span>Nivel de Escritura*</span>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="ddlNivelEscritura" InitialValue="SELECCIONAR UNA OPCION" Font-Bold="True"></asp:RequiredFieldValidator>
-						                <asp:DropDownList ID="ddlNivelEscritura" DataSourceID="odsNivelIdioma" DataTextField="dom_descripcion" OnDataBound="ddlNivelEscritura_DataBound" DataValueField="dom_codigo"  ForeColor="Black" class="form-control form-control-lg inverse-mode" runat="server"></asp:DropDownList>
+						                <asp:DropDownList ID="ddlNivelEscritura" DataSourceID="odsNivelIdioma" DataTextField="dom_descripcion" OnDataBound="ddlNivelEscritura_DataBound" DataValueField="dom_codigo"  ForeColor="Black" class="form-control form-control-lg " runat="server"></asp:DropDownList>
                                     </div> 
                                 <div class="form-group m-b-20 col-lg-6" style="float:left">
                                         <span>Nivel de Conversación*</span>
                                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*" ForeColor="Red" ControlToValidate="ddlNivelConversacion" InitialValue="SELECCIONAR UNA OPCION" Font-Bold="True"></asp:RequiredFieldValidator>
-						                <asp:DropDownList ID="ddlNivelConversacion" DataSourceID="odsNivelIdioma" DataTextField="dom_descripcion" OnDataBound="ddlNivelConversacion_DataBound" DataValueField="dom_codigo"  ForeColor="Black" class="form-control form-control-lg inverse-mode" runat="server"></asp:DropDownList>
+						                <asp:DropDownList ID="ddlNivelConversacion" DataSourceID="odsNivelIdioma" DataTextField="dom_descripcion" OnDataBound="ddlNivelConversacion_DataBound" DataValueField="dom_codigo"  ForeColor="Black" class="form-control form-control-lg " runat="server"></asp:DropDownList>
                                     </div>                                 
                                     <div class="form-group m-b-20  col-lg-6" style="float:left">     
                                         <asp:CheckBox ID="ckbCertificado" runat="server" /> <span> Cuenta con certificado del Idioma</span><br /><br />
