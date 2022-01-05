@@ -3368,6 +3368,7 @@
     <Content Include="Fotos\sin_imagen.png" />
     <Content Include="Imagenes\logo.png" />
     <Content Include="inicio.aspx" />
+    <Content Include="kardex.aspx" />
     <Content Include="login.aspx" />
     <Content Include="nivel_idioma.aspx" />
     <Content Include="Otros_Datos.aspx" />
@@ -3467,6 +3468,13 @@
     </Compile>
     <Compile Include="inicio.aspx.designer.cs">
       <DependentUpon>inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="kardex.aspx.cs">
+      <DependentUpon>kardex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="kardex.aspx.designer.cs">
+      <DependentUpon>kardex.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>

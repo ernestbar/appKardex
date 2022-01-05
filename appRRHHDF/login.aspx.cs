@@ -33,7 +33,7 @@ namespace appRRHHDF
             if (datos[2] == "0")
             {
                 Session["usuario"] = txtEmail.Text;
-                Response.Redirect("inicio.aspx");
+                Response.Redirect("kardex.aspx");
             }
                
             lblAviso.Text = datos[3];

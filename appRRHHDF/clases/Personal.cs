@@ -138,6 +138,22 @@ namespace appRRHHDF.clases
 
         }
 
+        public static DataTable PR_SEG_GET_PERSONAL_ALL()
+        {
+            try
+            {
+                DbCommand cmd = db1.GetStoredProcCommand("PR_SEG_GET_PERSONAL_ALL");
+                cmd.CommandTimeout = int.Parse(ConfigurationManager.AppSettings["CommandTimeout"]);
+                return db1.ExecuteDataSet(cmd).Tables[0];
+            }
+            catch (Exception ex)
+            {
+                ex.ToString();
+                DataTable dt = new DataTable();
+                return dt;
+            }
+
+        }
 
 
 
