@@ -336,6 +336,7 @@ namespace appRRHHDF
                           txtEmail.Text, txtTelefono.Text, txtCelular.Text, lblUsuario.Text, data,txtCargo.Text);
                         string[] resultado = obj.ABM().Split('|');
                         lblAviso.Text = resultado[3];
+                        lblIdPersonal.Text = resultado[0];
                     }
                     else
                     {
@@ -346,6 +347,7 @@ namespace appRRHHDF
                            txtEmail.Text, txtTelefono.Text, txtCelular.Text, lblUsuario.Text, data, txtCargo.Text);
                         string[] resultado = obj.ABM().Split('|');
                         lblAviso.Text = resultado[3];
+                        lblIdPersonal.Text = resultado[0];
                     }
                     
                 }

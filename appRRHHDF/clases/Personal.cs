@@ -268,7 +268,7 @@ namespace appRRHHDF.clases
             catch (Exception ex)
             {
                 //_error = ex.Message;
-                resultado = "Se produjo un error al registrar";
+                resultado = "0|||Se produjo un error al registrar";
                 return resultado;
             }
         }
