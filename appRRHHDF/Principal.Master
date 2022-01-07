@@ -18,7 +18,7 @@
 	<link href="assets/plugins/animate/animate.min.css" rel="stylesheet" />
 	<link href="assets/css/default/style.min.css" rel="stylesheet" />
 	<link href="assets/css/default/style-responsive.min.css" rel="stylesheet" />
-	<link href="assets/css/default/theme/green.css" rel="stylesheet" id="theme" />
+	<link href="assets/css/default/theme/red.css" rel="stylesheet" id="theme" />
 	<!-- ================== END BASE CSS STYLE ================== -->
 	
 	<!-- ================== BEGIN PAGE LEVEL STYLE ================== -->
@@ -62,7 +62,7 @@
 		<div id="header" class="header navbar-default">
 			<!-- begin navbar-header -->
 			<div class="navbar-header">
-				<img src="Imagenes/logo_kardex.png" width="70" />
+				<img src="Imagenes/logo_data_fidelis.png" width="150" />
 				<%--<b>Amas</b> Cuotas--%> 
 				
 				<button type="button" class="navbar-toggle" data-click="sidebar-toggled">

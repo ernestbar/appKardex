@@ -54,7 +54,7 @@
 				<!-- begin col-12 -->
 				<div class="col-lg-12">
                     <!-- begin nav-tabs -->
-					<ul class="nav nav-tabs" style="background-color:#6d6d6f;">
+					<ul class="nav nav-tabs">
 						<li class="nav-items">
 							<asp:LinkButton ID="lbtnDatosPersonales" ForeColor="White" CausesValidation="false" class="nav-link" OnClick="lbtnDatosPersonales_Click" runat="server">Datos personales</asp:LinkButton>
 						</li>

@@ -65,7 +65,7 @@
 	<!-- begin login-cover -->
 	<div class="login-cover">
 		<%--<div class="login-cover-image" style="background-image: url(assets/img/login-bg/login-bg-17.jpg)" data-id="login-cover-image"></div>--%>
-		<div class="login-cover-image" style="background-image: url(Fotos/fondo1.jpg)" data-id="login-cover-image"></div>
+		<div class="login-cover-image" style="background-image: url(Fotos/como-analizar-inversiones.jpg)" data-id="login-cover-image"></div>
 		<div class="login-cover-bg"></div>
 	</div>
 	<!-- end login-cover -->
@@ -77,7 +77,7 @@
 			<!-- begin brand -->
 			<%--<div class="login-header">--%>
 				<%--<div class="brand">--%>
-					<span><img src="Imagenes/logo_kardex.png" width="350" /></span> 
+					<span><img src="Imagenes/logo_data_fidelis.png" width="350" /></span> 
                     <br />  
 					<small><asp:Label ID="lblAviso" runat="server" Text="Label"></asp:Label> </small>
                     

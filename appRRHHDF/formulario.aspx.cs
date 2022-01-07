@@ -337,6 +337,8 @@ namespace appRRHHDF
                         string[] resultado = obj.ABM().Split('|');
                         lblAviso.Text = resultado[3];
                         lblIdPersonal.Text = resultado[0];
+                        Session["id_personal"]= resultado[0];
+                        //Response.Redirect("kardex.aspx");
                     }
                     else
                     {
@@ -348,12 +350,12 @@ namespace appRRHHDF
                         string[] resultado = obj.ABM().Split('|');
                         lblAviso.Text = resultado[3];
                         lblIdPersonal.Text = resultado[0];
+                        Session["id_personal"] = resultado[0];
                     }
                     
                 }
                 /////////////CARGA LOS DATOS DEL PERFIL NUEVAMENTE////////////
-                lblUsuario.Text = Session["usuario"].ToString();
-                DataTable dt = clases.Personal.Lista(lblUsuario.Text);
+                DataTable dt = clases.Personal.PR_SEG_GET_PERSONAL_ID(Int64.Parse(lblIdPersonal.Text));
                 if (dt.Rows.Count > 0)
                 {
                     foreach (DataRow dr in dt.Rows)
@@ -367,6 +369,7 @@ namespace appRRHHDF
                         if (String.IsNullOrEmpty(dr["PER_NUMERO_DOCUMENTO"].ToString())) { txtNumeroDocumento.Text = ""; } else { txtNumeroDocumento.Text = dr["PER_NUMERO_DOCUMENTO"].ToString(); }
                         if (String.IsNullOrEmpty(dr["PER_TIPO_DOCUMENTO"].ToString())) { ddlTipoDocumento.DataBind(); } else { ddlTipoDocumento.SelectedValue = dr["PER_TIPO_DOCUMENTO"].ToString(); }
                         if (String.IsNullOrEmpty(dr["PER_COMPLEMENTO"].ToString())) { txtComplemento.Text = ""; } else { txtComplemento.Text = dr["PER_COMPLEMENTO"].ToString(); }
+                        if (String.IsNullOrEmpty(dr["CAR_COD_CARGO"].ToString())) { txtCargo.Text = ""; } else { txtCargo.Text = dr["CAR_COD_CARGO"].ToString(); }
                         if (String.IsNullOrEmpty(dr["PER_EXPEDIDO"].ToString())) { ddlExpedido.DataBind(); } else { ddlExpedido.SelectedValue = dr["PER_EXPEDIDO"].ToString(); }
                         if (String.IsNullOrEmpty(dr["PER_ESTADO_CIVIL"].ToString())) { ddlEsdatoCivil.DataBind(); } else { ddlEsdatoCivil.SelectedValue = dr["PER_ESTADO_CIVIL"].ToString(); }
                         if (String.IsNullOrEmpty(dr["PER_GENERO"].ToString())) { ddlGenero.DataBind(); } else { ddlGenero.SelectedValue = dr["PER_GENERO"].ToString(); }

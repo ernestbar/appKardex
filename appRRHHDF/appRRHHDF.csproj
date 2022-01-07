@@ -3367,6 +3367,7 @@
     <Content Include="Fotos\como-analizar-inversiones.jpg" />
     <Content Include="Fotos\sin_imagen.png" />
     <Content Include="Imagenes\logo.png" />
+    <Content Include="Imagenes\logo_data_fidelis.png" />
     <Content Include="Imagenes\logo_kardex.png" />
     <Content Include="inicio.aspx" />
     <Content Include="kardex.aspx" />
